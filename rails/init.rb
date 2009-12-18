@@ -1,0 +1,12 @@
+require 'redmine'
+
+Redmine::Plugin.register :redmine_event_notification_override do
+  name 'Redmine Event Notification Override plugin'
+  author 'Eric Davis'
+  url 'https://projects.littlestreamsoftware.com'
+  author_url 'http://www.littlestreamsoftware.com'
+  description "A Redmine plugin to override the \"I don't want to be notified of changes that I make myself\" email option systemwide."
+  version '0.2.0'
+
+  requires_redmine :version_or_higher => '0.8.7'
+end
