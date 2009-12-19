@@ -1,3 +1,4 @@
-# English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  redmine_event_notification_override_text_override_help: "When this plugin is enabled, you can overide the User's email notification option of recieving their own events."
+  redmine_event_notification_override_label_enabled: "Enabled?"
+  redmine_event_notification_override_label_global_notifiy: "Notify user of changes they make themselves?"
