@@ -1,17 +1,30 @@
+<script type="text/javascript">
+//<![CDATA[
+function enableOrDisable() {
+  if ($('settings_enabled').checked) {
+    $('settings_notify_users_of_their_own_changes').enable();
+  } else {
+    $('settings_notify_users_of_their_own_changes').disable();
+  }
+}
+//]]>
+</script>
+
 <fieldset class="tabular settings">
 
   <%= content_tag(:legend, l(:redmine_event_notification_override_text_override_help)) %>
 
   <p>
     <%= content_tag(:label, l(:redmine_event_notification_override_label_enabled)) %>
-    <%= hidden_field_tag 'settings[enabled]', 0 %>
+    <%= hidden_field_tag 'settings[enabled]', 0, :id => 'settings_enabled_hidden' %>
     <%= check_box_tag 'settings[enabled]', 1, @settings['enabled'].to_i == 1 %>
   </p>
 
   <p>
     <%= content_tag(:label, l(:redmine_event_notification_override_label_global_notifiy)) %>
-    <%= hidden_field_tag 'settings[notify_users_of_their_own_changes]', 0 %>
-    <%= check_box_tag 'settings[notify_users_of_their_own_changes]', 'all', @settings['notify_users_of_their_own_changes'].all? {|u| !u.empty? } %>
+    <%= hidden_field_tag 'settings[notify_users_of_their_own_changes]', 0, :id => 'settings_notify_users_of_their_own_changes_hidden' %>
+    <%= check_box_tag('settings[notify_users_of_their_own_changes]', 'all', @settings['notify_users_of_their_own_changes'].all? {|u| !u.empty? }, :disabled => @settings['enabled'].to_i == 1 ? '' : 'disabled') %>
   </p>
 </fieldset>
 
+<%= observe_field('settings_enabled', :function => 'enableOrDisable()') %>
