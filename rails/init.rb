@@ -1,5 +1,13 @@
 require 'redmine'
 
+# Patches to the Redmine core.
+require 'dispatcher'
+
+Dispatcher.to_prepare :redmine_event_notification_override do
+  require_dependency 'user_preference'
+  UserPreference.send(:include, EventNotificationOverride::Patches::UserPreferencePatch)
+end
+
 Redmine::Plugin.register :redmine_event_notification_override do
   name 'Redmine Event Notification Override plugin'
   author 'Eric Davis'
