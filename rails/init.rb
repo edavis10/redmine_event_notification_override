@@ -13,6 +13,7 @@ Redmine::Plugin.register :redmine_event_notification_override do
   settings(:partial => 'settings/event_notification_override',
            :default => {
              'enabled' => '0',
-             'notify_users_of_their_own_changes' => ['']
+             # all == notify all users
+             'notify_users_of_their_own_changes' => '' 
            })
 end

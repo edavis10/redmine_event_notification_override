@@ -23,7 +23,7 @@ function enableOrDisable() {
   <p>
     <%= content_tag(:label, l(:redmine_event_notification_override_label_global_notifiy)) %>
     <%= hidden_field_tag 'settings[notify_users_of_their_own_changes]', 0, :id => 'settings_notify_users_of_their_own_changes_hidden' %>
-    <%= check_box_tag('settings[notify_users_of_their_own_changes]', 'all', @settings['notify_users_of_their_own_changes'].all? {|u| !u.empty? }, :disabled => @settings['enabled'].to_i == 1 ? '' : 'disabled') %>
+    <%= check_box_tag('settings[notify_users_of_their_own_changes]', 'all', @settings['notify_users_of_their_own_changes'].to_s == 'all', :disabled => @settings['enabled'].to_i == 1 ? nil : 'disabled') %>
   </p>
 </fieldset>
 

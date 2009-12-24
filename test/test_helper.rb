@@ -12,6 +12,8 @@ class Test::Unit::TestCase
 
   def setup_plugin_configuration
     configure_plugin({
+                       'enabled' => '0',
+                       'notify_users_of_their_own_changes' => ''
                      })
   end
 end
