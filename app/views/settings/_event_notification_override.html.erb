@@ -18,12 +18,14 @@ function enableOrDisable() {
     <%= content_tag(:label, l(:redmine_event_notification_override_label_enabled)) %>
     <%= hidden_field_tag 'settings[enabled]', 0, :id => 'settings_enabled_hidden' %>
     <%= check_box_tag 'settings[enabled]', 1, @settings['enabled'].to_i == 1 %>
+    <%= content_tag(:small, l(:redmine_event_notification_override_enabled_help), :style => 'font-style: italic') %>
   </p>
 
   <p>
     <%= content_tag(:label, l(:redmine_event_notification_override_label_global_notifiy)) %>
     <%= hidden_field_tag 'settings[notify_users_of_their_own_changes]', 0, :id => 'settings_notify_users_of_their_own_changes_hidden' %>
     <%= check_box_tag('settings[notify_users_of_their_own_changes]', 'all', @settings['notify_users_of_their_own_changes'].to_s == 'all', :disabled => @settings['enabled'].to_i == 1 ? nil : 'disabled') %>
+    <%= content_tag(:small, l(:redmine_event_notification_override_global_notify_help), :style => 'font-style: italic') %>
   </p>
 </fieldset>
 

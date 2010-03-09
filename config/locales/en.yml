@@ -1,4 +1,6 @@
 en:
   redmine_event_notification_override_text_override_help: "When this plugin is enabled, you can overide the User's email notification option of recieving their own events."
   redmine_event_notification_override_label_enabled: "Enabled?"
-  redmine_event_notification_override_label_global_notifiy: "Notify user of changes they make themselves?"
+  redmine_event_notification_override_label_global_notifiy: "Email self when making changes?"
+  redmine_event_notification_override_enabled_help: "If checked this plugin will globally affect user's settings. If unchecked this plugin has no effect Redmine."
+  redmine_event_notification_override_global_notify_help: "If checked ALL USERS will receive emails of changes they make themselves, if unchecked NO USERS will recieve email updates of changes they make themselves."
